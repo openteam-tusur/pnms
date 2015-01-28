@@ -1,5 +1,3 @@
-<% content_for :page_title, strip_tags(@site_name.content.body).squish %>
-
 <% if @content.present? %>
   <h1><%= @content.part_title.as_html %></h1>
   <%= render_partial_for_region(@content) %>

@@ -4,6 +4,7 @@
     <meta charset='utf-8'>
     <title><%= content_for?(:page_title) ? yield(:page_title).squish.html_safe : "#{@page_title} – #{strip_tags(@site_name.content.body)}".squish %></title>
     <%= favicon_link_tag %>
+    <%= canonical_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <!--[if lt IE 9]>
@@ -18,6 +19,35 @@
     <%= meta_tags %>
   </head>
   <body>
-    <%= yield %>
+    <div class='container'>
+      <div class='logotype'>
+        <%= link_to strip_tags(@site_name.content.body).squish, root_path %>
+      </div>
+      <div class='content_wrapper'>
+        <div class='side'>
+          <% if @main_navigation.present? %>
+            <div class='menu'>
+              <%= render_partial_for_region(@main_navigation, 'main') %>
+            </div>
+          <% end %>
+          <% if @banners.present? %>
+            <div class='banners'>
+              <%= render_partial_for_region(@banners) %>
+            </div>
+          <% end %>
+        </div>
+        <div class='content'>
+          <%= yield %>
+        </div>
+      </div>
+      <div class='footer'>
+        <hr />
+        <% if Rails.env.development? %>
+          <div class='development'>
+            <%= link_to 'JSON from CMS', @link_to_json, :target => '_blank' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </body>
 </html>

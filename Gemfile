@@ -10,6 +10,7 @@ group :default do
   gem 'interactor-rails'
   gem 'jquery-rails',                  '~> 2.1.4'
   gem 'kaminari'
+  gem 'nokogiri'
   gem 'non-stupid-digest-assets'
   gem 'progress_bar',                  :require => false
   gem 'rack-utf8_sanitizer'

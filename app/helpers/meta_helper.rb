@@ -2,8 +2,8 @@
 
 module MetaHelper
 
-  def canonical_href
-    request.path.eql?("/ru") ? '/' : request.path
+  def canonical_tag
+    tag(:link, :href => '/', :rel => 'canonical') if request.path.eql?('/ru')
   end
 
   def meta_tags
