@@ -3,18 +3,41 @@
   margin: 10px auto
   border: 2px solid #fff
 
-  .logotype a
-    display: block
-    width: 750px
-    height: 200px
-    overflow: hidden
-    text-indent: -999em
-    background: transparent image_url('logotype.png') no-repeat center center
+  .logotype
+    position: relative
+
+    &.ru
+      .image
+        display: block
+        width: 750px
+        height: 200px
+        overflow: hidden
+        text-indent: -999em
+        background: transparent image_url('logotype.png') no-repeat center center
+
+    .place,
+    .schedule
+      font-size: 22px
+      font-family: Arial, Verdana, Tahoma, sans-serif
+      position: absolute
+      +text-shadow(#fff 3px 0 0, #fff 0 3px 0, #fff -3px 0 0, #fff 0 -3px 0, #fff 2px 2px 0, #fff 2px -2px 0, #fff -2px 2px 0, #fff -2px -2px 0, #bbb 5px 5px 5px)
+
+      a
+        color: inherit
+        text-decoration: none
+
+    .place
+      left: 290px
+      top: 105px
+
+    .schedule
+      left: 220px
+      top: 140px
 
 .content_wrapper
   +clearfix
   background-color: #fff
-  padding: 15px
+  padding: 15px 15px 10px
 
   .side
     width: 175px
@@ -25,6 +48,12 @@
 
       li
         margin-bottom: 5px
+
+        &.active a
+          color: darken(#0099e8, 20)
+
+          &:hover
+            color: #2ee8ff
 
       ul > li > ul
         margin-top: 5px

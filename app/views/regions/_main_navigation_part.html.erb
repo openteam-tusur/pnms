@@ -1,1 +1,1 @@
-<%= render_cms_navigation object %>
+<%= render_cms_navigation object.try(:values).try(:first).try(:[], 'children') %>

@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang='ru'>
+<html lang='<%= I18n.locale %>'>
   <head>
     <meta charset='utf-8'>
     <title><%= content_for?(:page_title) ? yield(:page_title).squish.html_safe : "#{@page_title} – #{strip_tags(@site_name.content.body)}".squish %></title>
@@ -20,8 +20,10 @@
   </head>
   <body>
     <div class='container'>
-      <div class='logotype'>
-        <%= link_to strip_tags(@site_name.content.body).squish, root_path %>
+      <div class='logotype <%= I18n.locale %>'>
+        <%= link_to strip_tags(@site_name.content.body).squish, root_path, :class => 'image' %>
+        <p class='place'><%= link_to t('app.place'), root_path %></p>
+        <p class='schedule'><%= link_to t('app.schedule'), root_path %></p>
       </div>
       <div class='content_wrapper'>
         <div class='side'>
@@ -41,8 +43,8 @@
         </div>
       </div>
       <div class='footer'>
-        <p>ФНМС 2015, Томск</p>
-        <p>Томский государственный университет систем управления и радиоэлектроники</p>
+        <p><%= t('app.copyright.pnms') %></p>
+        <p><%= t('app.copyright.tusur') %></p>
         <% if Rails.env.development? %>
           <div class='development'>
             <%= link_to 'JSON from CMS', @link_to_json, :target => '_blank' %>
