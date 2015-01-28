@@ -1,0 +1,10 @@
+app:
+  secret:             SECRET
+
+cms:
+  url:                http://cms.url/
+  site_slug:          SLUG
+
+errors:
+  url:                http://errors.url/
+  key:                KEY
