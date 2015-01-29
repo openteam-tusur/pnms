@@ -10,7 +10,7 @@
     maxHeight: '90%'
     maxWidth: '90%'
     next: '→'
-    opacity: '0.2'
+    opacity: '0.5'
     photo: true
     previous: '←'
     returnFocus: false
