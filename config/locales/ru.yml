@@ -2,8 +2,10 @@ ru:
 
   app:
 
+    abbr: 'ФНМС'
+    year: '2015'
     place: 'Томск, Россия'
-    schedule: 'с 7 по 11 сентября 2015 года'
+    schedule: '7 – 11 сентября 2015 года'
 
     copyright:
 

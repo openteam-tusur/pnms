@@ -21,9 +21,14 @@
   <body>
     <div class='container'>
       <div class='logotype <%= I18n.locale %>'>
-        <%= link_to strip_tags(@site_name.content.body).squish, root_path, :class => 'image' %>
-        <p class='place'><%= link_to t('app.place'), root_path %></p>
-        <p class='schedule'><%= link_to t('app.schedule'), root_path %></p>
+        <p class='abbr'><%= t('app.abbr') %></p>
+        <p class='year'><%= t('app.year') %></p>
+        <p class='title'>
+          <%= strip_tags(@site_name.content.body).squish.as_html %><br />
+          <%= t('app.place') %><br />
+          <%= t('app.schedule') %>
+        </p>
+        <%= link_to strip_tags(@site_name.content.body).squish, root_path %>
       </div>
       <div class='content_wrapper'>
         <div class='side'>
