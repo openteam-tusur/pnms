@@ -8,6 +8,7 @@ group :default do
   gem 'gilenson'
   gem 'hashie'
   gem 'interactor-rails'
+  gem 'jquery-colorbox-rails'
   gem 'jquery-rails',                  '~> 2.1.4'
   gem 'kaminari'
   gem 'nokogiri'
