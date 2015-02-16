@@ -19,6 +19,20 @@
     <%= meta_tags %>
   </head>
   <body>
+    <ul class='languages'>
+      <% I18n.available_locales.each do |lang| %>
+        <% klass = [lang] %>
+        <% klass << ['selected'] if I18n.locale.eql?(lang) %>
+        <% klass = klass.join(' ') %>
+        <li>
+          <% if lang == :ru %>
+            <%= link_to lang, root_path, :class => klass, :title => I18n.t("lang.#{lang}") %>
+          <% else %>
+            <%= link_to lang, "/#{lang}", :class => klass, :title => I18n.t("lang.#{lang}") %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
     <div class='container'>
       <div class='logotype <%= I18n.locale %>'>
         <p class='abbr'><%= t('app.abbr') %></p>
@@ -28,7 +42,11 @@
           <%= t('app.place') %><br />
           <%= t('app.schedule') %>
         </p>
-        <%= link_to strip_tags(@site_name.content.body).squish, root_path %>
+        <% if I18n.locale == 'ru' %>
+          <%= link_to strip_tags(@site_name.content.body).squish, root_path %>
+        <% else %>
+          <%= link_to strip_tags(@site_name.content.body).squish, "/#{I18n.locale}" %>
+        <% end %>
       </div>
       <div class='content_wrapper'>
         <div class='side'>

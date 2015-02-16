@@ -5,10 +5,17 @@ module Cmsable
   extend ActiveSupport::Concern
 
   included do
+    before_action :prepare_locale
     before_action :load_cms_data
   end
 
   private
+
+  def prepare_locale
+    request_locale = request.path.split('/').delete_if(&:blank?).first.to_s
+    request_locale = 'ru' unless I18n.available_locales.include?(request_locale.to_sym)
+    I18n.locale = request_locale
+  end
 
   def load_cms_data
     render :file => "#{Rails.root}/public/404", :formats => [:html], :layout => false, :status => 404 and return if request_status == 404
