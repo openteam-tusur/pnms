@@ -19,20 +19,6 @@
     <%= meta_tags %>
   </head>
   <body>
-    <ul class='languages'>
-      <% I18n.available_locales.each do |lang| %>
-        <% klass = [lang] %>
-        <% klass << ['selected'] if I18n.locale.eql?(lang) %>
-        <% klass = klass.join(' ') %>
-        <li>
-          <% if lang == :ru %>
-            <%= link_to lang, root_path, :class => klass, :title => I18n.t("lang.#{lang}") %>
-          <% else %>
-            <%= link_to lang, "/#{lang}", :class => klass, :title => I18n.t("lang.#{lang}") %>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
     <div class='container'>
       <div class='logotype <%= I18n.locale %>'>
         <p class='abbr'><%= t('app.abbr') %></p>
@@ -62,6 +48,20 @@
           <% end %>
         </div>
         <div class='content'>
+          <ul class='languages'>
+            <% I18n.available_locales.each do |lang| %>
+              <% klass = [lang] %>
+              <% klass << ['selected'] if I18n.locale.eql?(lang) %>
+              <% klass = klass.join(' ') %>
+              <li>
+                <% if lang == :ru %>
+                  <%= link_to lang, root_path, :class => klass, :title => I18n.t("lang.#{lang}") %>
+                <% else %>
+                  <%= link_to lang, "/#{lang}", :class => klass, :title => I18n.t("lang.#{lang}") %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
           <%= yield %>
         </div>
       </div>
