@@ -1,12 +1,19 @@
 @init_colorbox = ->
 
+  close_text = 'закрыть'
+  of_text = 'из'
+
+  if window.location.pathname.match(/\/en/)
+    close_text = 'close'
+    of_text = 'of'
+
   $('.galleria a').each (index) ->
     $(this).addClass('colorbox').attr('rel', 'colorbox')
     return
 
   $('a.colorbox').colorbox
-    close: 'закрыть'
-    current: '{current} из {total}'
+    close: close_text
+    current: "{current} #{of_text} {total}"
     maxHeight: '90%'
     maxWidth: '90%'
     next: '→'
