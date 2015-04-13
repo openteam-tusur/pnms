@@ -13,6 +13,7 @@ group :default do
   gem 'kaminari'
   gem 'nokogiri'
   gem 'non-stupid-digest-assets'
+  gem 'pg'
   gem 'progress_bar',                  :require => false
   gem 'rack-utf8_sanitizer'
   gem 'rails',                         '~> 4.0.3'
@@ -34,6 +35,7 @@ group :development do
   gem 'hirb'
   gem 'openteam-capistrano',           '~> 1.0.11'
   gem 'quiet_assets' #,                  :require => false
+  gem 'sqlite3'
 end
 
 group :production do
