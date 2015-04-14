@@ -16,6 +16,14 @@ ru:
     'yes': 'да'
     'no': 'нет'
 
+    report:
+      title: 'Доклад'
+      add: 'Добавить доклад'
+      remove: 'Удалить'
+
+    annotation:
+      limit: 'Не более 300 символов'
+
     copyright:
 
       pnms: 'ФНМС 2015, Томск'

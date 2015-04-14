@@ -2,9 +2,12 @@ app:
   secret:             SECRET
 
 cms:
-  url:                http://cms.url/
+  url:                http://cms.url
   site_slug:          SLUG
 
+storage:
+  url:                http://storage.url
+
 errors:
-  url:                http://errors.url/
+  url:                http://errors.url
   key:                KEY

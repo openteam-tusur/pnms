@@ -16,6 +16,14 @@ en:
     'yes': 'yes'
     'no': 'no'
 
+    report:
+      title: 'Report'
+      add: 'Add report'
+      remove: 'Remove'
+
+    annotation:
+      limit: 'No more than 300 characters'
+
     copyright:
 
       pnms: 'PhNMS-2015 (Tomsk)'

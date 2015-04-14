@@ -1,52 +1,42 @@
 <h1><%= I18n.t('app.registration_of_participants') %></h1>
+
 <%= simple_nested_form_for @claim, :url => [:ru, :registratsiya] do |f| %>
 
-  <fieldset class='inline-block'>
-    <%= f.input :surname %>
-    <%= f.input :name %>
-    <%= f.input :patronymic %>
-    <%= f.input :gender %>
-  </fieldset>
+  <%= f.input :surname %>
+  <%= f.input :name %>
+  <%= f.input :patronymic %>
+  <%= f.input :gender %>
 
-  <fieldset class='inline-block'>
-    <%= f.input :email %>
-    <%= f.input :birthdate, :as => :datepicker %>
-    <%= f.input :contact_phone %>
-  </fieldset>
+  <%= f.input :email %>
+  <%= f.input :birthdate, :as => :datepicker %>
+  <%= f.input :contact_phone %>
 
-  <fieldset class='block'>
-    <%= f.input :organization_title %>
-    <%= f.input :organization_abbr %>
-  </fieldset>
+  <%= f.input :organization_title %>
+  <%= f.input :organization_abbr %>
 
-  <fieldset class='inline-block'>
-    <%= f.input :postcode %>
-    <%= f.input :country, :priority => Claim.priority_countries, :include_blank => true %>
-    <%= f.input :locality %>
-  </fieldset>
+  <%= f.input :postcode %>
+  <%= f.input :country, :priority => Claim.priority_countries, :include_blank => true %>
+  <%= f.input :locality %>
 
-  <fieldset class='inline-block'>
-    <%= f.input :academic_degree, :prompt => "--- #{I18n.t('app.no')} ---" %>
-    <%= f.input :academic_status %>
-  </fieldset>
+  <%= f.input :academic_degree, :prompt => "--- #{I18n.t('app.no')} ---" %>
+  <%= f.input :academic_status %>
 
-  <fieldset class='inline-block'>
-    <%= f.input :post %>
-    <%= f.input :work_phone %>
-  </fieldset>
+  <%= f.input :post %>
+  <%= f.input :work_phone %>
 
-  <fieldset class='inline-block'>
-    <%= f.fields_for :reports do |report|  %>
+  <%= f.fields_for :reports do |report| %>
+    <fieldset>
+      <legend><%= I18n.t('app.report.title') %></legend>
+      <%= report.link_to_remove I18n.t('app.report.remove'), :class => :floatr %>
       <%= report.input :title %>
       <%= report.input :authors, :as => :text %>
       <%= report.input :kind %>
       <%= report.input :section %>
-      <%= report.input :annotation %>
+      <%= report.input :annotation, :placeholder => I18n.t('app.annotation.limit'), :input_html => { :maxlength => 300 } %>
       <%= report.input :attachment   %>
-      <%= report.link_to_remove 'Удалить' %>
-    <% end %>
-    <p><%= f.link_to_add "Добавить доклад", :reports %>
-  </fieldset>
+    </fieldset>
+  <% end %>
+  <%= f.link_to_add I18n.t('app.report.add'), :reports %>
 
   <div class='actions'>
     <%= f.submit %>
