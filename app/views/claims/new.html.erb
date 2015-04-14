@@ -1,6 +1,6 @@
 <h1><%= I18n.t('app.registration_of_participants') %></h1>
 
-<%= simple_nested_form_for @claim, :url => [:ru, :registratsiya] do |f| %>
+<%= simple_nested_form_for @claim, :url => I18n.locale == :ru ? '/ru/registratsiya' : '/en/registration' do |f| %>
 
   <%= f.input :surname %>
   <%= f.input :name %>
@@ -18,8 +18,8 @@
   <%= f.input :country, :priority => Claim.priority_countries, :include_blank => true %>
   <%= f.input :locality %>
 
-  <%= f.input :academic_degree, :prompt => "--- #{I18n.t('app.no')} ---" %>
-  <%= f.input :academic_status %>
+  <%= f.input :academic_degree, :include_blank => false %>
+  <%= f.input :academic_status, :include_blank => false %>
 
   <%= f.input :post %>
   <%= f.input :work_phone %>
@@ -33,7 +33,7 @@
       <%= report.input :kind %>
       <%= report.input :section %>
       <%= report.input :annotation, :placeholder => I18n.t('app.annotation.limit'), :input_html => { :maxlength => 300 } %>
-      <%= report.input :attachment   %>
+      <%= report.input :attachment, :hint => I18n.t('app.attachment.hint') %>
     </fieldset>
   <% end %>
   <%= f.link_to_add I18n.t('app.report.add'), :reports %>

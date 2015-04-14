@@ -24,6 +24,9 @@ en:
     annotation:
       limit: 'No more than 300 characters'
 
+    attachment:
+      hint: 'In rtf format'
+
     copyright:
 
       pnms: 'PhNMS-2015 (Tomsk)'
@@ -54,3 +57,11 @@ en:
         postcode: 'Postcode'
         country: 'Country'
         locality: 'City'
+
+      report:
+        title: 'Title'
+        authors: 'Authors'
+        kind: 'Kind'
+        section: 'Section'
+        annotation: 'Annotation'
+        attachment: 'Attachment'

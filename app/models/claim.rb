@@ -2,7 +2,7 @@ class Claim < ActiveRecord::Base
   validates_presence_of :surname, :name, :patronymic,
     :email, :birthdate, :gender, :contact_phone, :work_phone,
     :post, :organization_title, :organization_abbr,
-    :postcode, :country, :locality, :academic_degree
+    :postcode, :country, :locality, :academic_degree, :academic_status
 
   normalize_attributes :surname, :name, :patronymic,
     :email, :birthdate, :gender, :contact_phone, :work_phone,
