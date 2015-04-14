@@ -21,10 +21,12 @@ group :default do
   gem 'rest-client'
   gem 'russian'
   gem 'sass-rails',                    '~> 4.0.1'
+  gem 'simple_form'
   gem 'sitemap_generator'
   gem 'stop_ie'
   gem 'uglifier'
   gem 'whenever',                      '~> 0.9.2'
+  gem 'country_select'
 end
 
 group :development do

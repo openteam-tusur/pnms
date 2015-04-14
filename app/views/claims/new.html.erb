@@ -1,0 +1,18 @@
+<%= simple_form_for @claim, :url => [:ru, :registratsiya] do |f| %>
+  <%= f.input :surname %>
+  <%= f.input :name %>
+  <%= f.input :patronymic %>
+  <%= f.input :email %>
+  <%= f.input :birthdate %>
+  <%= f.input :gender %>
+  <%= f.input :contact_phone %>
+  <%= f.input :work_phone %>
+  <%= f.input :academic_degree %>
+  <%= f.input :academic_status %>
+  <%= f.input :post %>
+  <%= f.input :organization_title %>
+  <%= f.input :organization_abbr %>
+  <%= f.input :postcode %>
+  <%= f.input :country %>
+  <%= f.input :locality %>
+<% end %>
