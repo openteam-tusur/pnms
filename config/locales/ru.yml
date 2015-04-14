@@ -46,3 +46,11 @@ ru:
         postcode: 'Почтовый индекс'
         country: 'Страна'
         locality: 'Город'
+
+      report:
+        title: 'Название доклада'
+        authors: 'Авторы'
+        kind: 'Тип'
+        section: 'Секция'
+        annotation: 'Аннотация'
+        attachment: 'Файл с тезисами'

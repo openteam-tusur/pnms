@@ -14,8 +14,11 @@ group :default do
   gem 'jquery-colorbox-rails'
   gem 'jquery-rails',                  '~> 2.1.4'
   gem 'kaminari'
+  gem 'nested_form'
   gem 'nokogiri'
   gem 'non-stupid-digest-assets'
+  gem 'paperclip'
+  gem 'paperclip-elvfs'
   gem 'pg'
   gem 'progress_bar',                  :require => false
   gem 'rack-utf8_sanitizer'

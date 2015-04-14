@@ -15,6 +15,7 @@ class Claim < ActiveRecord::Base
   enumerize :academic_degree, :in => [:bachelor, :master_degree, :candidate_of_science, :doctor_of_science]
 
   has_many :reports, :dependent => :destroy
+  accepts_nested_attributes_for :reports
 
   def self.priority_countries
     return [ 'BY', 'CN', 'RU', 'US', 'FI', 'FR', 'JP', ] if I18n.locale == :ru

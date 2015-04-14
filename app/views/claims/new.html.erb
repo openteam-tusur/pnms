@@ -1,5 +1,5 @@
 <h1><%= I18n.t('app.registration_of_participants') %></h1>
-<%= simple_form_for @claim, :url => [:ru, :registratsiya] do |f| %>
+<%= simple_nested_form_for @claim, :url => [:ru, :registratsiya] do |f| %>
 
   <fieldset class='inline-block'>
     <%= f.input :surname %>
@@ -33,6 +33,19 @@
   <fieldset class='inline-block'>
     <%= f.input :post %>
     <%= f.input :work_phone %>
+  </fieldset>
+
+  <fieldset class='inline-block'>
+    <%= f.fields_for :reports do |report|  %>
+      <%= report.input :title %>
+      <%= report.input :authors, :as => :text %>
+      <%= report.input :kind %>
+      <%= report.input :section %>
+      <%= report.input :annotation %>
+      <%= report.input :attachment   %>
+      <%= report.link_to_remove 'Удалить' %>
+    <% end %>
+    <p><%= f.link_to_add "Добавить доклад", :reports %>
   </fieldset>
 
   <div class='actions'>

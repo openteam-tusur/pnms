@@ -6,6 +6,14 @@ class ClaimsController < ApplicationController
     @claim = Claim.new
   end
 
+  def create
+    @claim = Claim.new(claim_params)
+    if @claim.save!
+      redirect_to root_path
+    else
+      render 'new'
+    end
+  end
 
   private
   def claim_params
@@ -16,6 +24,7 @@ class ClaimsController < ApplicationController
       :academic_degree, :academic_status,
       :post, :organization_title,
       :organization_abbr,
-      :postcode, :country, :locality)
+      :postcode, :country, :locality,
+      reports_attributes: [:title, :authors, :kind, :section, :annotation, :attachment, :_destroy])
   end
 end
