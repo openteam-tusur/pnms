@@ -108,6 +108,8 @@ GEM
     currencies (0.4.2)
     daemons (1.1.9)
     dotenv (1.0.2)
+    enumerize (0.8.0)
+      activesupport (>= 3.2)
     erubis (2.7.0)
     esp-commons (0.5.3)
       active_attr
@@ -288,6 +290,7 @@ DEPENDENCIES
   compass-rails
   country_select
   curb
+  enumerize
   esp-commons
   foreman
   gilenson

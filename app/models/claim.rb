@@ -1,7 +1,7 @@
 class Claim < ActiveRecord::Base
   validates_presence_of :surname, :name, :patronymic,
     :email, :birthdate, :gender, :contact_phone, :work_phone,
-    :academic_degree, :academic_status, :post, :organization_title, :organization_abbr,
+    :post, :organization_title, :organization_abbr,
     :postcode, :country, :locality
 
   normalize_attributes :surname, :name, :patronymic,
@@ -9,7 +9,17 @@ class Claim < ActiveRecord::Base
     :academic_degree, :academic_status, :post, :organization_title, :organization_abbr,
     :postcode, :country, :locality
 
+  extend Enumerize
+
+  enumerize :gender, :in => [:male, :female]
+  enumerize :academic_degree, :in => [:bachelor, :master_degree, :candidate_of_science, :doctor_of_science]
+
   has_many :reports, :dependent => :destroy
+
+  def self.priority_countries
+    return [ 'BY', 'CN', 'RU', 'US', 'FI', 'FR', 'JP', ] if I18n.locale == :ru
+    return [ 'BY', 'CN', 'FI', 'FR', 'JP', 'RU', 'US', ] if I18n.locale == :en
+  end
 end
 
 # == Schema Information

@@ -11,6 +11,11 @@ en:
     place: 'Tomsk, Russia'
     schedule: '7 – 11 September 2015'
 
+    registration_of_participants: 'Registration of participants'
+
+    'yes': 'yes'
+    'no': 'no'
+
     copyright:
 
       pnms: 'PhNMS-2015 (Tomsk)'

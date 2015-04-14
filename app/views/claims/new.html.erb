@@ -1,18 +1,41 @@
+<h1><%= I18n.t('app.registration_of_participants') %></h1>
 <%= simple_form_for @claim, :url => [:ru, :registratsiya] do |f| %>
-  <%= f.input :surname %>
-  <%= f.input :name %>
-  <%= f.input :patronymic %>
-  <%= f.input :email %>
-  <%= f.input :birthdate %>
-  <%= f.input :gender %>
-  <%= f.input :contact_phone %>
-  <%= f.input :work_phone %>
-  <%= f.input :academic_degree %>
-  <%= f.input :academic_status %>
-  <%= f.input :post %>
-  <%= f.input :organization_title %>
-  <%= f.input :organization_abbr %>
-  <%= f.input :postcode %>
-  <%= f.input :country %>
-  <%= f.input :locality %>
+
+  <fieldset class='inline-block'>
+    <%= f.input :surname %>
+    <%= f.input :name %>
+    <%= f.input :patronymic %>
+    <%= f.input :gender %>
+  </fieldset>
+
+  <fieldset class='inline-block'>
+    <%= f.input :email %>
+    <%= f.input :birthdate, :as => :datepicker %>
+    <%= f.input :contact_phone %>
+  </fieldset>
+
+  <fieldset class='block'>
+    <%= f.input :organization_title %>
+    <%= f.input :organization_abbr %>
+  </fieldset>
+
+  <fieldset class='inline-block'>
+    <%= f.input :postcode %>
+    <%= f.input :country, :priority => Claim.priority_countries, :include_blank => true %>
+    <%= f.input :locality %>
+  </fieldset>
+
+  <fieldset class='inline-block'>
+    <%= f.input :academic_degree, :prompt => "--- #{I18n.t('app.no')} ---" %>
+    <%= f.input :academic_status %>
+  </fieldset>
+
+  <fieldset class='inline-block'>
+    <%= f.input :post %>
+    <%= f.input :work_phone %>
+  </fieldset>
+
+  <div class='actions'>
+    <%= f.submit %>
+  </div>
 <% end %>

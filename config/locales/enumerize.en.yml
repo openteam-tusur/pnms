@@ -1,0 +1,11 @@
+en:
+  enumerize:
+    claim:
+      gender:
+        male: 'Male'
+        female: 'Female'
+      academic_degree:
+        bachelor: 'Bachelor'
+        master_degree: "Master's degree"
+        candidate_of_science: 'Candidate of Sciences'
+        doctor_of_science: 'Doctor of Sciences'

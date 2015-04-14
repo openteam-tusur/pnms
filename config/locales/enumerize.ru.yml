@@ -1,0 +1,11 @@
+ru:
+  enumerize:
+    claim:
+      gender:
+        male: 'Мужской'
+        female: 'Женский'
+      academic_degree:
+        bachelor: 'Бакалавр'
+        master_degree: 'Магистр'
+        candidate_of_science: 'Кандидат наук'
+        doctor_of_science: 'Доктор наук'
