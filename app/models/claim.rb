@@ -9,6 +9,8 @@ class Claim < ActiveRecord::Base
     :academic_degree, :academic_status, :post, :organization_title, :organization_abbr,
     :postcode, :country, :locality
 
+  #validates_associated :reports
+
   extend Enumerize
 
   enumerize :gender, :in => [:male, :female]

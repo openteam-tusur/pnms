@@ -8,11 +8,18 @@ class ClaimsController < ApplicationController
 
   def create
     @claim = Claim.new(claim_params)
-    if @claim.save!
-      redirect_to root_path
+    if @claim.save
+      if I18n.locale == :ru
+        redirect_to ru_registratsiya_done_path
+      else
+        redirect_to en_registration_done_path
+      end
     else
       render 'new'
     end
+  end
+
+  def done
   end
 
   private

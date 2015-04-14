@@ -24,6 +24,18 @@
   <%= f.input :post %>
   <%= f.input :work_phone %>
 
+  <fieldset>
+    <legend><%= I18n.t('app.report.title') %></legend>
+    <%= simple_fields_for :reports do |report| %>
+      <%= report.input :title %>
+      <%= report.input :authors, :as => :text %>
+      <%= report.input :kind %>
+      <%= report.input :section %>
+      <%= report.input :annotation, :placeholder => I18n.t('app.annotation.limit'), :input_html => { :maxlength => 300 } %>
+      <%= report.input :attachment   %>
+    <% end %>
+  </fieldset>
+
   <%= f.fields_for :reports do |report| %>
     <fieldset>
       <legend><%= I18n.t('app.report.title') %></legend>
