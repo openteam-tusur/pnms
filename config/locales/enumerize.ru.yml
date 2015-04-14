@@ -5,10 +5,18 @@ ru:
         male: 'Мужской'
         female: 'Женский'
       academic_degree:
-        bachelor: 'Бакалавр'
-        master_degree: 'Магистр'
-        candidate_of_science: 'Кандидат наук'
-        doctor_of_science: 'Доктор наук'
+        none: 'нет'
+        kfmn: 'к.ф.м.н'
+        ktn: 'к.т.н'
+        khn: 'к.х.н'
+        dfmn: 'д.ф.м.н'
+        dtn: 'д.т.н'
+        dhn: 'д.х.н'
+      academic_status:
+        none: 'нет'
+        sns: 'с.н.с'
+        docent: 'доцент'
+        professor: 'профессор'
     report:
       section:
         photonic_crystal_structure: 'Фотонные кристаллы и структуры'
@@ -19,3 +27,8 @@ ru:
         photonic_quantum_system_facility: 'Фотонные и квантовые системы и устройства'
         nano_biophoton: 'Нано- и биофотоника'
 
+      kind:
+        message: 'Сообщение (15 мин.)'
+        report: 'Доклад (30 мин.)'
+        lecture: 'Лекция (45 мин.)'
+        poster: 'Постер'

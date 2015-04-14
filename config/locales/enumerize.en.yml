@@ -5,10 +5,14 @@ en:
         male: 'Male'
         female: 'Female'
       academic_degree:
-        bachelor: 'Bachelor'
-        master_degree: "Master's degree"
-        candidate_of_science: 'Candidate of Sciences'
-        doctor_of_science: 'Doctor of Sciences'
+        none: 'none'
+        ph_d: 'ph.d'
+        professor: 'professor'
+      academic_status:
+        none: 'none'
+        doctor: 'doctor'
+        professor: 'professor'
+        academician: 'academician'
     report:
       section:
         photonic_crystal_structure: 'Photon crystals and structures'
@@ -18,4 +22,8 @@ en:
         nanometer_system_measuring: 'Nanometrology and  measuring systems'
         photonic_quantum_system_facility: 'Photon and  quantum systems and devices'
         nano_biophoton: 'Nano-and biophotonics'
+      kind:
+        invited_lector: 'invited lector'
+        oral: 'oral'
+        poster: 'poster'
 

@@ -2,7 +2,7 @@ class Claim < ActiveRecord::Base
   validates_presence_of :surname, :name, :patronymic,
     :email, :birthdate, :gender, :contact_phone, :work_phone,
     :post, :organization_title, :organization_abbr,
-    :postcode, :country, :locality
+    :postcode, :country, :locality, :academic_degree
 
   normalize_attributes :surname, :name, :patronymic,
     :email, :birthdate, :gender, :contact_phone, :work_phone,
@@ -12,7 +12,13 @@ class Claim < ActiveRecord::Base
   extend Enumerize
 
   enumerize :gender, :in => [:male, :female]
-  enumerize :academic_degree, :in => [:bachelor, :master_degree, :candidate_of_science, :doctor_of_science]
+  enumerize :academic_degree, :in => [:none, :kfmn, :ktn, :khn, :dfmn, :dtn, :dhn, :ph_d, :professor]
+  enumerize :academic_degree, :in => [:none, :kfmn, :ktn, :khn, :dfmn, :dtn, :dhn] if I18n.locale == :ru
+  enumerize :academic_degree, :in => [:none, :ph_d, :professor] if I18n.locale == :en
+
+  enumerize :academic_status, :in => [:none, :sns, :docent, :professor, :doctor, :academician]
+  enumerize :academic_status, :in => [:none, :sns, :docent, :professor] if I18n.locale == :ru
+  enumerize :academic_status, :in => [:none, :doctor, :professor, :academician] if I18n.locale == :en
 
   has_many :reports, :dependent => :destroy
   accepts_nested_attributes_for :reports
