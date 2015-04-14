@@ -15,3 +15,29 @@ en:
 
       pnms: 'PhNMS-2015 (Tomsk)'
       tusur: 'Tomsk State University of Control Systems and Radioelectronics'
+
+  activerecord:
+
+    models:
+      claim: 'Application form for participation'
+      report: 'Report'
+
+    attributes:
+
+      claim:
+        surname: 'Surname'
+        name: 'Name'
+        patronymic: 'Patronymic'
+        email: 'E-mail'
+        birthdate: 'Date of Birth'
+        gender: 'Gender'
+        contact_phone: 'Contact phone number'
+        work_phone: 'Work phone number'
+        academic_degree: 'Academic degree'
+        academic_status: 'Academic status'
+        post: 'Post'
+        organization_title: 'Full name of the organization'
+        organization_abbr: 'Short name of the organization'
+        postcode: 'Postcode'
+        country: 'Country'
+        locality: 'City'

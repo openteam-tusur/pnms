@@ -15,3 +15,29 @@ ru:
 
       pnms: 'ФНМС 2015, Томск'
       tusur: 'Томский государственный университет систем управления и радиоэлектроники'
+
+  activerecord:
+
+    models:
+      claim: 'Заявка на участие'
+      report: 'Доклад'
+
+    attributes:
+
+      claim:
+        surname: 'Фамилия'
+        name: 'Имя'
+        patronymic: 'Отчество'
+        email: 'E-mail'
+        birthdate: 'Дата рождения'
+        gender: 'Пол'
+        contact_phone: 'Номер контактного телефона'
+        work_phone: 'Номер рабочего телефона'
+        academic_degree: 'Учёная степень'
+        academic_status: 'Учёное звание'
+        post: 'Должность'
+        organization_title: 'Полное название организации'
+        organization_abbr: 'Сокращённое название организации'
+        postcode: 'Почтовый индекс'
+        country: 'Страна'
+        locality: 'Город'

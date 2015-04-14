@@ -18,7 +18,7 @@
     <%= csrf_meta_tags %>
     <%= meta_tags %>
   </head>
-  <body>
+  <body data-locale='<%= I18n.locale %>'>
     <div class='container'>
       <div class='logotype <%= I18n.locale %>'>
         <p class='abbr'><%= t('app.abbr') %></p>

@@ -1,4 +1,14 @@
 class Claim < ActiveRecord::Base
+  validates_presence_of :surname, :name, :patronymic,
+    :email, :birthdate, :gender, :contact_phone, :work_phone,
+    :academic_degree, :academic_status, :post, :organization_title, :organization_abbr,
+    :postcode, :country, :locality
+
+  normalize_attributes :surname, :name, :patronymic,
+    :email, :birthdate, :gender, :contact_phone, :work_phone,
+    :academic_degree, :academic_status, :post, :organization_title, :organization_abbr,
+    :postcode, :country, :locality
+
   has_many :reports, :dependent => :destroy
 end
 

@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
 group :default do
+  gem 'attribute_normalizer'
   gem 'coffee-rails',                  '~> 4.0.1'
   gem 'compass-rails'
+  gem 'country_select'
   gem 'curb'
   gem 'esp-commons'
   gem 'gilenson'
@@ -26,7 +28,6 @@ group :default do
   gem 'stop_ie'
   gem 'uglifier'
   gem 'whenever',                      '~> 0.9.2'
-  gem 'country_select'
 end
 
 group :development do
