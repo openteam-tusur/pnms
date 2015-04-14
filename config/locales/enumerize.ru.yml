@@ -9,3 +9,13 @@ ru:
         master_degree: 'Магистр'
         candidate_of_science: 'Кандидат наук'
         doctor_of_science: 'Доктор наук'
+    report:
+      section:
+        photonic_crystal_structure: 'Фотонные кристаллы и структуры'
+        nonlinear_optical_material: 'Нелинейно-оптические материалы'
+        nanoheterostructure: 'Наногетероструктуры и нанокомпозиты'
+        semi_conducting_microstructure: 'Полупроводниковые нано- и микроструктуры'
+        nanometer_system_measuring: 'Нанометрология и системы измерений'
+        photonic_quantum_system_facility: 'Фотонные и квантовые системы и устройства'
+        nano_biophoton: 'Нано- и биофотоника'
+

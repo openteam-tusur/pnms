@@ -3,10 +3,13 @@ class Report < ActiveRecord::Base
 
   extend Enumerize
   enumerize :kind, :in => [:one, :two]
-  enumerize :section, :in => [:one, :two]
+  enumerize :section, :in => [:photonic_crystal_structure, :nonlinear_optical_material, :nanoheterostructure, :semi_conducting_microstructure,
+                              :nanometer_system_measuring, :photonic_quantum_system_facility, :nano_biophoton]
 
   has_attached_file :attachment, :storage => :elvfs, :elvfs_url => Settings['storage.url']
   validates_attachment :attachment, content_type: { content_type: "application/rtf"  }
+
+  validates_presence_of :title, :authors, :kind, :section, :annotation, :attachment
 end
 
 # == Schema Information
