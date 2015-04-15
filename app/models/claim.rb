@@ -1,6 +1,7 @@
 class Claim < ActiveRecord::Base
 
-  attr_accessor :academic_degree_ru, :academic_degree_en, :academic_status_ru, :academic_status_en
+  attr_accessor :academic_degree_ru, :academic_degree_en,
+    :academic_status_ru, :academic_status_en, :term_accept
 
   validates_presence_of :surname, :name, :patronymic,
     :email, :birthdate, :gender, :contact_phone, :work_phone,

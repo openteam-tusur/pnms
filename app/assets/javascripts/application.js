@@ -6,5 +6,6 @@
  *= require colorbox
  *= require datepicker
  *= require jquery_nested_form
+ *= require term_accept
  *= require main
  */

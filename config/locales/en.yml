@@ -60,6 +60,7 @@ en:
         country_code: 'Country'
         country: 'Country'
         locality: 'City'
+        term_accept: 'I agree to the processing and publication of personal data'
 
       report:
         title: 'Title'

@@ -48,7 +48,9 @@
     <span class='error'><%= @claim.errors.full_messages_for(:reports).join %></span>
   <% end %>
 
+  <%= f.input :term_accept, :as => :boolean %>
+
   <div class='actions'>
-    <%= f.submit %>
+    <%= f.submit :disabled => true %>
   </div>
 <% end %>
