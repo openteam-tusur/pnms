@@ -3,7 +3,7 @@
   close_text = 'закрыть'
   of_text = 'из'
 
-  if window.location.pathname.match(/\/en/)
+  if $('body').data('locale') == 'en'
     close_text = 'close'
     of_text = 'of'
 

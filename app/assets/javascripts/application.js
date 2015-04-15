@@ -1,6 +1,10 @@
-//= require jquery
-//= require jquery_ujs
-//= require jquery.colorbox
-//= require colorbox
-//= require jquery_nested_form
-//= require main
+/*
+ *= require jquery
+ *= require jquery-ui
+ *= require jquery_ujs
+ *= require jquery.colorbox
+ *= require colorbox
+ *= require datepicker
+ *= require jquery_nested_form
+ *= require main
+ */
