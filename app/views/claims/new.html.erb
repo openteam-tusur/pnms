@@ -2,6 +2,10 @@
 
 <%= simple_nested_form_for @claim, :url => I18n.locale == :ru ? '/ru/registratsiya' : '/en/registration' do |f| %>
 
+  <% if @claim.errors.full_messages.any? %>
+    <p class='large error'><%= I18n.t('simple_form.error_notification.default_message') %></p>
+  <% end %>
+
   <%= f.input :surname %>
   <%= f.input :name %>
   <%= f.input :patronymic %>
@@ -46,6 +50,11 @@
   <%= f.link_to_add I18n.t('app.report.add'), :reports %>
   <% if @claim.errors.full_messages_for(:reports).any? %>
     <span class='error'><%= @claim.errors.full_messages_for(:reports).join %></span>
+  <% end %>
+
+  <%= recaptcha_tags :display => { :theme => 'white' }, :ajax => true %>
+  <% if @claim.errors.full_messages_for(:base).any? %>
+    <span class='error'><%= @claim.errors.full_messages_for(:base).join %></span>
   <% end %>
 
   <%= f.input :term_accept, :as => :boolean %>

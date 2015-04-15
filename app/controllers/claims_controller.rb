@@ -8,7 +8,7 @@ class ClaimsController < ApplicationController
 
   def create
     @claim = Claim.new(claim_params)
-    if @claim.save
+    if verify_recaptcha(:model => @claim) && @claim.save
       if I18n.locale == :ru
         redirect_to ru_registratsiya_done_path
       else
@@ -37,6 +37,7 @@ class ClaimsController < ApplicationController
       :post, :organization_title,
       :organization_abbr,
       :postcode, :country, :locality,
+      :term_accept,
       reports_attributes: [
         :title,
         :authors,

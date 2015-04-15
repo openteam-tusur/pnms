@@ -1,13 +1,17 @@
 app:
-  secret:             SECRET
+  secret:     SECRET
 
 cms:
-  url:                http://cms.url
-  site_slug:          SLUG
+  url:        http://cms.url
+  site_slug:  SLUG
 
 storage:
-  url:                http://storage.url
+  url:        http://storage.url
 
 errors:
-  url:                http://errors.url
-  key:                KEY
+  url:        http://errors.url
+  key:        KEY
+
+recaptcha:
+  private:    SECRET
+  public:     SECRET
