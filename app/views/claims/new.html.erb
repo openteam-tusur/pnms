@@ -1,4 +1,7 @@
-<h1><%= I18n.t('app.registration_of_participants') %></h1>
+<% if @content.present? %>
+  <h1><%= @content.part_title.as_html %></h1>
+  <%= render_partial_for_region(@content) %>
+<% end %>
 
 <%= simple_nested_form_for @claim, :url => I18n.locale == :ru ? '/ru/registratsiya' : '/en/registration' do |f| %>
 
@@ -6,7 +9,7 @@
     <p class='large error'><%= I18n.t('simple_form.error_notification.default_message') %></p>
   <% end %>
 
-  <%= f.input :surname %>
+  <%= f.input :surname, :autofocus => true %>
   <%= f.input :name %>
   <%= f.input :patronymic %>
   <%= f.input :gender %>
@@ -62,4 +65,5 @@
   <div class='actions'>
     <%= f.submit :disabled => true %>
   </div>
+
 <% end %>
