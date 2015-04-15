@@ -12,7 +12,20 @@ ru:
         dfmn: 'д.ф.м.н'
         dtn: 'д.т.н'
         dhn: 'д.х.н'
+      academic_degree_ru:
+        none: 'нет'
+        kfmn: 'к.ф.м.н'
+        ktn: 'к.т.н'
+        khn: 'к.х.н'
+        dfmn: 'д.ф.м.н'
+        dtn: 'д.т.н'
+        dhn: 'д.х.н'
       academic_status:
+        none: 'нет'
+        sns: 'с.н.с'
+        docent: 'доцент'
+        professor: 'профессор'
+      academic_status_ru:
         none: 'нет'
         sns: 'с.н.с'
         docent: 'доцент'
@@ -28,6 +41,11 @@ ru:
         nano_biophoton: 'Нано- и биофотоника'
 
       kind:
+        message: 'Сообщение (15 мин.)'
+        report: 'Доклад (30 мин.)'
+        lecture: 'Лекция (45 мин.)'
+        poster: 'Постер'
+      kind_ru:
         message: 'Сообщение (15 мин.)'
         report: 'Доклад (30 мин.)'
         lecture: 'Лекция (45 мин.)'

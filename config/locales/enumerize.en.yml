@@ -8,7 +8,16 @@ en:
         none: 'none'
         ph_d: 'ph.d'
         professor: 'professor'
+      academic_degree_en:
+        none: 'none'
+        ph_d: 'ph.d'
+        professor: 'professor'
       academic_status:
+        none: 'none'
+        doctor: 'doctor'
+        professor: 'professor'
+        academician: 'academician'
+      academic_status_en:
         none: 'none'
         doctor: 'doctor'
         professor: 'professor'
@@ -26,4 +35,7 @@ en:
         invited_lector: 'invited lector'
         oral: 'oral'
         poster: 'poster'
-
+      kind_en:
+        invited_lector: 'invited lector'
+        oral: 'oral'
+        poster: 'poster'

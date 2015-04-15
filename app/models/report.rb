@@ -1,11 +1,16 @@
 class Report < ActiveRecord::Base
+
+  attr_accessor :kind_ru, :kind_en
+
+  validates_presence_of :title, :authors, :kind, :section, :annotation, :attachment
+
   belongs_to :claim
 
   extend Enumerize
 
   enumerize :kind, :in => [:message, :report, :lecture, :poster, :invited_lector, :oral]
-  enumerize :kind, :in => [:message, :report, :lecture, :poster] if I18n.locale == :ru
-  enumerize :kind, :in => [:invited_lector, :oral, :poster] if I18n.locale == :en
+  enumerize :kind_ru, :in => [:message, :report, :lecture, :poster]
+  enumerize :kind_en, :in => [:invited_lector, :oral, :poster]
 
   enumerize :section, :in => [:photonic_crystal_structure, :nonlinear_optical_material, :nanoheterostructure, :semi_conducting_microstructure,
                               :nanometer_system_measuring, :photonic_quantum_system_facility, :nano_biophoton]
@@ -13,7 +18,14 @@ class Report < ActiveRecord::Base
   has_attached_file :attachment, :storage => :elvfs, :elvfs_url => Settings['storage.url']
   validates_attachment :attachment, content_type: { content_type: ['application/rtf', 'application/x-rtf', 'text/rtf'] }
 
-  validates_presence_of :title, :authors, :kind, :section, :annotation, :attachment
+  before_validation :set_kind
+
+  private
+
+  def set_kind
+    self.kind = self.kind_ru || self.kind_en
+  end
+
 end
 
 # == Schema Information

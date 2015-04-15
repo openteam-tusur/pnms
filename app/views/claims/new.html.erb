@@ -18,8 +18,13 @@
   <%= f.input :country, :priority => Claim.priority_countries, :include_blank => true %>
   <%= f.input :locality %>
 
-  <%= f.input :academic_degree, :include_blank => false %>
-  <%= f.input :academic_status, :include_blank => false %>
+  <%= f.input :academic_degree_ru, :required => true if I18n.locale == :ru %>
+  <%= f.input :academic_degree_en, :required => true if I18n.locale == :en %>
+  <%= f.input :academic_degree, :label => false, :input_html => { :class => :hidden } %>
+
+  <%= f.input :academic_status_ru, :required => true if I18n.locale == :ru %>
+  <%= f.input :academic_status_en, :required => true if I18n.locale == :en %>
+  <%= f.input :academic_status, :label => false, :input_html => { :class => :hidden } %>
 
   <%= f.input :post %>
   <%= f.input :work_phone %>
@@ -30,7 +35,9 @@
       <%= report.link_to_remove I18n.t('app.report.remove'), :class => :floatr %>
       <%= report.input :title %>
       <%= report.input :authors, :as => :text %>
-      <%= report.input :kind %>
+      <%= report.input :kind_ru, :required => true if I18n.locale == :ru %>
+      <%= report.input :kind_en, :required => true if I18n.locale == :en %>
+      <%= report.input :kind, :label => false, :input_html => { :class => :hidden } %>
       <%= report.input :section %>
       <%= report.input :annotation, :placeholder => I18n.t('app.annotation.limit'), :input_html => { :maxlength => 300 } %>
       <%= report.input :attachment, :hint => I18n.t('app.attachment.hint') %>

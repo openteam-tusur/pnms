@@ -28,10 +28,26 @@ class ClaimsController < ApplicationController
       :surname, :name, :patronymic,
       :email, :birthdate, :gender,
       :contact_phone, :work_phone,
-      :academic_degree, :academic_status,
+      :academic_degree,
+      :academic_degree_ru,
+      :academic_degree_en,
+      :academic_status,
+      :academic_status_en,
+      :academic_status_ru,
       :post, :organization_title,
       :organization_abbr,
       :postcode, :country, :locality,
-      reports_attributes: [:title, :authors, :kind, :section, :annotation, :attachment, :_destroy])
+      reports_attributes: [
+        :title,
+        :authors,
+        :kind,
+        :kind_ru,
+        :kind_en,
+        :section,
+        :annotation,
+        :attachment,
+        :_destroy
+      ]
+    )
   end
 end
