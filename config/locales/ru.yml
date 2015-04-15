@@ -57,6 +57,7 @@ ru:
         postcode: 'Почтовый индекс'
         country: 'Страна'
         locality: 'Город'
+        reports: 'Список докладов'
 
       report:
         title: 'Название'

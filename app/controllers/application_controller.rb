@@ -8,6 +8,8 @@ class ApplicationController < CommonController
     request_path = origin_request_path
     request_path = '/ru/registratsiya' if origin_request_path.match(/\A\/ru\/registratsiya.*/)
     request_path = '/en/registration' if origin_request_path.match(/\A\/en\/registration.*/)
+    request_path = '/ru/registratsiya/done' if origin_request_path.match(/\A\/ru\/registratsiya\/done/)
+    request_path = '/en/registration/done' if origin_request_path.match(/\A\/en\/registration\/done/)
 
     ["#{cms_address}#{request_path.gsub('//', '/').split('/').compact.join('/')}.json", parts_params].compact.join('?')
   end

@@ -9,7 +9,7 @@ class Claim < ActiveRecord::Base
     :academic_degree, :academic_status, :post, :organization_title, :organization_abbr,
     :postcode, :country, :locality
 
-  #validates_associated :reports
+  validates :email, :email => true
 
   extend Enumerize
 
@@ -23,7 +23,9 @@ class Claim < ActiveRecord::Base
   enumerize :academic_status, :in => [:none, :doctor, :professor, :academician] if I18n.locale == :en
 
   has_many :reports, :dependent => :destroy
-  accepts_nested_attributes_for :reports
+  validates :reports, :presence => true
+
+  accepts_nested_attributes_for :reports, allow_destroy: true
 
   def self.priority_countries
     return [ 'BY', 'CN', 'RU', 'US', 'FI', 'FR', 'JP', ] if I18n.locale == :ru

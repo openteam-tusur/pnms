@@ -6,6 +6,7 @@ group :default do
   gem 'compass-rails'
   gem 'country_select'
   gem 'curb'
+  gem 'email_validator'
   gem 'enumerize'
   gem 'esp-commons'
   gem 'gilenson'
