@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 group :default do
   gem 'attribute_normalizer'
+  gem 'auth_client',                  :git => 'https://github.com/openteam-tusur/auth_client'
+  gem 'auth_redis_user_connector',    :git => 'https://github.com/openteam-tusur/auth_redis_user_connector'
   gem 'coffee-rails',                 '~> 4.0.1'
   gem 'compass-rails'
   gem 'country_select'

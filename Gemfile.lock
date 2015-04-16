@@ -1,3 +1,22 @@
+GIT
+  remote: https://github.com/openteam-tusur/auth_client
+  revision: 3b8d278442e9b1a495ea6991cb70063e14553d6e
+  specs:
+    auth_client (0.0.3)
+      activesupport
+      auth_redis_user_connector
+      configliere
+      daemons
+      rails
+
+GIT
+  remote: https://github.com/openteam-tusur/auth_redis_user_connector
+  revision: 08e22a9664d4f1be9209041176c39b3e0969ea5f
+  specs:
+    auth_redis_user_connector (0.0.8)
+      hiredis
+      redis
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -139,6 +158,7 @@ GEM
     highline (1.6.21)
     hike (1.2.3)
     hirb (0.7.2)
+    hiredis (0.6.0)
     i18n (0.7.0)
     i18n_data (0.6.3)
     interactor (3.1.0)
@@ -300,6 +320,8 @@ PLATFORMS
 DEPENDENCIES
   annotate
   attribute_normalizer
+  auth_client!
+  auth_redis_user_connector!
   brakeman
   capistrano-auth-subscriber
   coffee-rails (~> 4.0.1)

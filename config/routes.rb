@@ -10,6 +10,10 @@ Pnms::Application.routes.draw do
   post '/en/registration' => 'claims#create'
   get '/en/registration/done' => 'claims#done'
 
+  namespace :manage do
+    resources :permissions
+  end
+
   root :to => 'application#index'
   get '/(*path)', :to => 'application#index'
 end
