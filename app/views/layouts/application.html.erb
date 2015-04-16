@@ -21,14 +21,16 @@
   <body data-locale='<%= I18n.locale %>'>
     <div class='container'>
       <div class='logotype <%= I18n.locale %>'>
-        <div class="auth_block">
-          <% if current_user %>
-            <%= current_user %> |
-            <%= link_to 'Выход', "#{Settings['profile.sign_out_url']}?redirect_url=#{root_url}", :method => :delete %>
-          <% else %>
-            <%= link_to 'Вход', sign_in_url %>
-          <% end %>
-        </div>
+        <% if I18n.locale == :ru %>
+          <div class="auth_block">
+            <% if current_user %>
+              <%= current_user %> |
+              <%= link_to 'Выход', "#{Settings['profile.sign_out_url']}?redirect_url=#{root_url}", :method => :delete %>
+            <% else %>
+              <%= link_to 'Вход', sign_in_url %>
+            <% end %>
+          </div>
+        <% end %>
         <p class='abbr'><%= t('app.abbr') %></p>
         <p class='year'><%= t('app.year') %></p>
         <p class='title'>
@@ -43,7 +45,7 @@
           <% if @main_navigation.present? %>
             <div class='menu'>
               <%= render_partial_for_region(@main_navigation, 'main') %>
-              <%= render_navigation %>
+              <%= render_navigation if I18n.locale == :ru %>
             </div>
           <% end %>
           <% if @banners.present? %>

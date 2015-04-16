@@ -4,19 +4,10 @@ class Permission < ActiveRecord::Base
 
   acts_as_auth_client_permission :roles => [:admin, :manager]
 
-  validates_uniqueness_of :role,
-    :scope => [:email],
-    :message => 'У пользователя не может быть несколько одинаковых ролей',
-    :if => :email?,
-    :unless => :context_type?
-
-  validates_uniqueness_of :role,
-    :scope => [:user_id],
-    :message => 'У пользователя не может быть несколько одинаковых ролей',
-    :if => :user_id?,
-    :unless => :context_type?
-
   delegate :fullname, :email, :to => :user, :prefix => true, :allow_nil => true
+
+  validates_uniqueness_of :role, :scope => :user_id,
+    :message => 'У пользователя не может быть несколько одинаковых ролей'
 
   searchable do
     string :role
