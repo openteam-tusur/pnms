@@ -32,6 +32,10 @@ en:
       pnms: 'PhNMS-2015 (Tomsk)'
       tusur: 'Tomsk State University of Control Systems and Radioelectronics'
 
+  role_names:
+    admin: 'Administrator'
+    manager: 'Manager'
+
   recaptcha:
     errors:
       verification_failed: 'Word verification response is incorrect, please try again'

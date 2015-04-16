@@ -5,7 +5,7 @@ class User
   acts_as_auth_client_user
 
   def app_name
-    Settings['app.host'].parameterize('_')
+    Settings['app.host'].to_s.parameterize('_')
   end
 
   Permission.available_roles.each do |role|

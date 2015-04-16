@@ -16,7 +16,11 @@ class Report < ActiveRecord::Base
                               :nanometer_system_measuring, :photonic_quantum_system_facility, :nano_biophoton]
 
   has_attached_file :attachment, :storage => :elvfs, :elvfs_url => Settings['storage.url']
-  validates_attachment :attachment, content_type: { content_type: ['application/rtf', 'application/x-rtf', 'text/rtf'] }
+  validates_attachment :attachment, content_type: { content_type: [
+    'application/rtf', 'application/x-rtf', 'text/rtf'
+  ] }
+
+  before_post_process :rename_attachment
 
   before_validation :set_kind
 
@@ -24,6 +28,12 @@ class Report < ActiveRecord::Base
 
   def set_kind
     self.kind = self.kind_ru || self.kind_en
+  end
+
+  def rename_attachment
+    filename = File.basename(attachment_file_name, '.*').try(&:mb_chars).try(&:downcase).to_s.parameterize('_').truncate(200, :omission => '')
+    extension = File.extname(attachment_file_name).downcase
+    self.attachment.instance_write(:file_name, "#{filename}#{extension}")
   end
 
 end

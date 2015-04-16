@@ -43,6 +43,7 @@
           <% if @main_navigation.present? %>
             <div class='menu'>
               <%= render_partial_for_region(@main_navigation, 'main') %>
+              <%= render_navigation %>
             </div>
           <% end %>
           <% if @banners.present? %>

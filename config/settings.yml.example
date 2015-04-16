@@ -4,13 +4,6 @@ app:
   host:         HOST
   url:          http://app.url
 
-cms:
-  url:          http://cms.url
-  site_slug:    SLUG
-
-storage:
-  url:          http://storage.url
-
 profile:
   url:          http://localhost:3001/
   sign_in_url:  http://localhost:3001/users/sign_in
@@ -28,6 +21,16 @@ session_store:
   key_prefix:   'session:'
   host:         'localhost'
   port:         '6379'
+
+cms:
+  url:          http://cms.url
+  site_slug:    SLUG
+
+storage:
+  url:          http://storage.url
+
+solr:
+  url:          http://solr.url/cores/app
 
 errors:
   url:          http://errors.url
