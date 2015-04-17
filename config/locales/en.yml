@@ -32,6 +32,9 @@ en:
       pnms: 'PhNMS-2015 (Tomsk)'
       tusur: 'Tomsk State University of Control Systems and Radioelectronics'
 
+  access:
+    not_authorized: 'You are not authorized to access this page'
+
   role_names:
     admin: 'Administrator'
     manager: 'Manager'
