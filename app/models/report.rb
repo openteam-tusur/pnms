@@ -17,7 +17,7 @@ class Report < ActiveRecord::Base
 
   has_attached_file :attachment, :storage => :elvfs, :elvfs_url => Settings['storage.url']
   validates_attachment :attachment, content_type: { content_type: [
-    'application/rtf', 'application/x-rtf', 'text/rtf'
+    'application/rtf', 'application/x-rtf', 'text/rtf', 'application/msword'
   ] }
 
   before_post_process :rename_attachment
@@ -31,7 +31,7 @@ class Report < ActiveRecord::Base
   end
 
   def rename_attachment
-    filename = File.basename(attachment_file_name, '.*').try(&:mb_chars).try(&:downcase).to_s.parameterize('_').truncate(200, :omission => '')
+    filename = File.basename(attachment_file_name, '.*').try(&:mb_chars).try(&:downcase).to_s.parameterize('_').truncate(100, :omission => '')
     extension = File.extname(attachment_file_name).downcase
     self.attachment.instance_write(:file_name, "#{filename}#{extension}")
   end

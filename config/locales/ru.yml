@@ -25,7 +25,7 @@ ru:
       limit: 'Не более 300 символов'
 
     attachment:
-      hint: 'В формате rtf'
+      hint: 'В формате .doc или .rtf'
 
     copyright:
 
@@ -79,3 +79,7 @@ ru:
         section: 'Секция'
         annotation: 'Аннотация'
         attachment: 'Файл с тезисами'
+
+      permission:
+        name: 'Ф.И.О.'
+        role: 'Роль'

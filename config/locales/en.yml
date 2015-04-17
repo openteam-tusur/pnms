@@ -25,7 +25,7 @@ en:
       limit: 'No more than 300 characters'
 
     attachment:
-      hint: 'In rtf format'
+      hint: 'In .doc or .rtf format'
 
     copyright:
 
