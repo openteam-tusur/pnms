@@ -1,5 +1,7 @@
 Pnms::Application.routes.draw do
 
+  put '/ali.txt' => redirect('http://alihack.com')
+
   resources :reports
 
   get '/ru/registratsiya' => 'claims#new'
