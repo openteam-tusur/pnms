@@ -12,6 +12,7 @@ group :default do
   gem 'email_validator'
   gem 'enumerize'
   gem 'esp-commons'
+  gem 'font-awesome-sass'
   gem 'gilenson'
   gem 'hashie'
   gem 'interactor-rails'
@@ -25,6 +26,7 @@ group :default do
   gem 'paperclip-elvfs'
   gem 'pg'
   gem 'progress_bar',                 :require => false
+  gem 'protected_attributes'
   gem 'rack-utf8_sanitizer'
   gem 'rails',                        '~> 4.0.3'
   gem 'recaptcha',                    :require => 'recaptcha/rails'

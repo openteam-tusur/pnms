@@ -14,6 +14,10 @@ Pnms::Application.routes.draw do
     resources :permissions
   end
 
+  resources :users, :only => [] do
+    get 'search', :on => :collection
+  end
+
   root :to => 'application#index'
   get '/(*path)', :to => 'application#index'
 end

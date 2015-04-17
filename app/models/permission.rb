@@ -2,12 +2,20 @@ class Permission < ActiveRecord::Base
 
   include AuthClient::Permission
 
+  attr_accessible :role, :name, :user_id
+
+  attr_accessor :name
+
   acts_as_auth_client_permission :roles => [:admin, :manager]
 
   delegate :fullname, :email, :to => :user, :prefix => true, :allow_nil => true
 
   validates_uniqueness_of :role, :scope => :user_id,
     :message => 'У пользователя не может быть несколько одинаковых ролей'
+
+  def self.per_page
+    20
+  end
 
   searchable do
     string :role

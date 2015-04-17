@@ -1,5 +1,10 @@
 class Claim < ActiveRecord::Base
 
+  attr_accessible :surname, :name, :patronymic, :email, :birthdate, :gender,
+    :contact_phone, :work_phone, :academic_degree, :academic_degree_ru, :academic_degree_en,
+    :academic_status, :academic_status_en, :academic_status_ru, :post, :organization_title,
+    :organization_abbr, :postcode, :country, :locality, :term_accept, :reports_attributes
+
   attr_accessor :academic_degree_ru, :academic_degree_en,
     :academic_status_ru, :academic_status_en, :term_accept
 

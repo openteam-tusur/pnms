@@ -40,6 +40,14 @@ en:
     errors:
       verification_failed: 'Word verification response is incorrect, please try again'
 
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "&hellip;"
+
   activerecord:
 
     models:

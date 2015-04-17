@@ -31,7 +31,7 @@ class PermissionsSearcher
 
       order_by :user_fullname, :asc
 
-      paginate :page => params_page
+      paginate :page => params_page, :per_page => Permission.per_page
 
       with :role, params_role if params_role
 

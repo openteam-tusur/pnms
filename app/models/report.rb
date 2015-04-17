@@ -1,5 +1,7 @@
 class Report < ActiveRecord::Base
 
+  attr_accessible :title, :authors, :kind, :kind_ru, :kind_en, :section, :annotation, :attachment
+
   attr_accessor :kind_ru, :kind_en
 
   validates_presence_of :title, :authors, :kind, :section, :annotation, :attachment
