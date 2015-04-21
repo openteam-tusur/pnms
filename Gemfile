@@ -7,6 +7,7 @@ group :default do
   gem 'cancan'
   gem 'coffee-rails',                 '~> 4.0.1'
   gem 'compass-rails'
+  gem 'countries'
   gem 'country_select'
   gem 'curb'
   gem 'email_validator'

@@ -65,12 +65,14 @@ SimpleNavigation::Configuration.run do |navigation|
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,
     # thus you can use all the methods and vars you have available in the views.
-    primary.item :permissions, 'Управление правами', manage_permissions_path, :if => -> { can?(:manage, :permissions) }
+    primary.item :permissions, 'Управление правами', manage_permissions_path, :if => -> { can?(:manage, Permission) }
+    primary.item :claims, 'Управление заявками', manage_claims_path, :if => -> { can?(:manage, Claim) }
     #primary.item :key_4, 'Account', url, unless: -> { logged_in? }
 
     # you can also specify html attributes to attach to this particular level
     # works for all levels of the menu
     # primary.dom_attributes = {id: 'menu-id', class: 'menu-class'}
+    primary.dom_attributes = { :class => 'additional-menu' }
 
     # You can turn off auto highlighting for a specific level
     # primary.auto_highlight = false

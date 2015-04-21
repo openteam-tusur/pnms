@@ -3,7 +3,7 @@
   <%= render_partial_for_region(@content) %>
 <% end %>
 
-<%= simple_nested_form_for @claim, :url => I18n.locale == :ru ? '/ru/registratsiya' : '/en/registration' do |f| %>
+<%= simple_nested_form_for @claim, :url => I18n.locale == :ru ? '/ru/registratsiya' : '/en/registration', :html => { :multipart => true } do |f| %>
 
   <%= f.error_notification :class => 'error large' %>
 

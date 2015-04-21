@@ -6,6 +6,8 @@ class Report < ActiveRecord::Base
 
   validates_presence_of :title, :authors, :kind, :section, :annotation, :attachment
 
+  normalize_attributes :title, :authors, :annotation
+
   belongs_to :claim
 
   extend Enumerize
@@ -25,6 +27,10 @@ class Report < ActiveRecord::Base
   before_post_process :rename_attachment
 
   before_validation :set_kind
+
+  def file_url
+    attachment_url
+  end
 
   private
 

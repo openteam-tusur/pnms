@@ -40,12 +40,12 @@
         </p>
         <%= link_to strip_tags(@site_name.content.body).squish, I18n.locale == 'ru' ? root_path : "/#{I18n.locale}", :class => :overlay %>
       </div>
-      <div class='content_wrapper'>
+      <div class='content-wrapper <%= controller_path.split('/').first %>'>
         <div class='side'>
           <% if @main_navigation.present? %>
             <div class='menu'>
               <%= render_partial_for_region(@main_navigation, 'main') %>
-              <%= render_navigation if I18n.locale == :ru %>
+              <%= render_navigation if I18n.locale == :ru && current_user && (current_user.admin? || current_user.manager?) %>
             </div>
           <% end %>
           <% if @banners.present? %>

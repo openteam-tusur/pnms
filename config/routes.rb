@@ -13,7 +13,8 @@ Pnms::Application.routes.draw do
   get '/en/registration/done' => 'claims#done'
 
   namespace :manage do
-    resources :permissions
+    resources :permissions, :except => [:edit, :update]
+    resources :claims, :only => [:index, :show]
   end
 
   resources :users, :only => [] do

@@ -344,6 +344,7 @@ DEPENDENCIES
   capistrano-auth-subscriber
   coffee-rails (~> 4.0.1)
   compass-rails
+  countries
   country_select
   curb
   email_validator

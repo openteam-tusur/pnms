@@ -45,6 +45,18 @@ class Claim < ActiveRecord::Base
     return [ 'BY', 'CN', 'FI', 'FR', 'JP', 'RU', 'US', ] if I18n.locale == :en
   end
 
+  def self.per_page
+    10
+  end
+
+  searchable do
+    time :created_at
+  end
+
+  def fullname
+    [surname, name, patronymic].compact.join(' ')
+  end
+
   private
 
   def set_academic_degree

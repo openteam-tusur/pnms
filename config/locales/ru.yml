@@ -35,6 +35,13 @@ ru:
   access:
     not_authorized: 'Вы не авторизованы для доступа к этой странице.'
 
+  claim:
+    reports:
+      zero: 'Нет докладов'
+      one: '1 доклад'
+      few: '%{count} доклада'
+      many: '%{count} докладов'
+
   role_names:
     admin: 'Администратор'
     manager: 'Менеджер'
