@@ -12,7 +12,7 @@ class ClaimsSearcher
   private
 
   def params_page
-    params[:page]
+    params[:page] || 1
   end
 
   def params_query
