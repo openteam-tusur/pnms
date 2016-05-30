@@ -17,7 +17,7 @@ module Pnms
       #{config.root}/lib
     )
 
-    config.time_zone = 'Novosibirsk'
+    config.time_zone = 'Krasnoyarsk'
     config.i18n.default_locale = :ru
     config.i18n.available_locales = [:ru, :en]
     config.middleware.insert_before 'Rack::Runtime', Rack::UTF8Sanitizer
