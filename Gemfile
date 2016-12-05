@@ -23,6 +23,7 @@ group :default do
   gem 'nested_form'
   gem 'nokogiri'
   gem 'non-stupid-digest-assets'
+  gem 'openteam-commons', '~> 0.3.3'
   gem 'paperclip'
   gem 'paperclip-elvfs'
   gem 'pg'
@@ -50,7 +51,7 @@ group :development do
   gem 'capistrano-auth-subscriber'
   gem 'foreman'
   gem 'hirb'
-  gem 'openteam-capistrano', '~> 1.0.11'
+  gem 'openteam-capistrano', '~> 1.0.16'
   gem 'quiet_assets'
   gem 'sqlite3'
 end
