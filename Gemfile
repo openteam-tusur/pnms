@@ -9,7 +9,7 @@ group :default do
   gem 'compass-rails'
   gem 'countries'
   gem 'country_select'
-  gem 'curb'
+  gem 'curb', '~> 0.9.5'
   gem 'email_validator'
   gem 'enumerize'
   gem 'esp-commons'
