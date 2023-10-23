@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 group :default do
   gem 'attribute_normalizer'
   gem 'auth_client', git: 'https://github.com/openteam-tusur/auth_client'
-  gem 'auth_redis_user_connector', git: 'https://github.com/openteam-tusur/auth_redis_user_connector'
+  gem 'auth_redis_user_connector', '~> 0.0.9' # git: 'https://github.com/openteam-tusur/auth_redis_user_connector'
   gem 'cancan'
   gem 'coffee-rails', '~> 4.0.1'
   gem 'compass-rails'
